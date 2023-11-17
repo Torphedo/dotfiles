@@ -101,7 +101,7 @@ nnoremap J J0
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
 " Fugitive keybindings
-nnoremap <leader>g :Git<CR>
+nnoremap <leader>gg :Git<CR>
 " Add current file to git (git add [current file])
 nnoremap <leader>ga :Gwrite<CR>
 nnoremap <leader>gw :Gwrite<CR>
