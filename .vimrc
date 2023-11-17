@@ -100,6 +100,17 @@ nnoremap J J0
 " Search-replace
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 
+" Fugitive keybindings
+nnoremap <leader>g :Git<CR>
+" Add current file to git (git add [current file])
+nnoremap <leader>ga :Gwrite<CR>
+nnoremap <leader>gw :Gwrite<CR>
+" This is named "gc" as in "git commit" to distinguish from "git remove".
+nnoremap <leader>gc :Gread<CR>
+nnoremap <leader>gr :Gremove<CR>
+" We assume remote name is main here, maybe not the best.
+nnoremap <leader>gp :Git push origin main<CR>
+
 " Leader + e (for "explore") to open netrw.
 nnoremap <leader>e <C-w>n:Ex<CR>
 
