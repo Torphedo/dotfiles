@@ -16,3 +16,6 @@
 [submodule "src/st"]
 	path = src/st
 	url = https://github.com/Torphedo/st
+[submodule "src/dmenu"]
+	path = src/dmenu
+	url = https://github.com/Torphedo/dmenu
