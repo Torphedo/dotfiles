@@ -7,6 +7,8 @@ set incsearch
 set smartindent
 set autoindent
 
+set completeopt+=menuone,noselect,noinsert
+
 " 4 space tabs
 let indentsize=4 " This variable controls tab size for everything
 let &tabstop=indentsize
@@ -113,6 +115,13 @@ nnoremap <leader>gp :Git push origin main<CR>
 
 " Leader + e (for "explore") to open netrw.
 nnoremap <leader>e <C-w>n:Ex<CR>
+
+" LaTeX shortcuts
+nnoremap <leader>ll :!mkdir -p out<CR>:!pdflatex -output-directory=out %<CR><CR>
+nnoremap <leader>lv :!zathura out/*.pdf --fork<CR><CR>
+
+" Spellcheck keybinds
+nnoremap <leader>sp :setlocal spell spelllang=en_us<CR>
 
 " Shortcut to use clipboard
 nnoremap <leader>p "+p
