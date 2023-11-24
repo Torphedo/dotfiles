@@ -1,0 +1,6 @@
+# Compiler output
+*.o
+
+# st binary file
+st
+

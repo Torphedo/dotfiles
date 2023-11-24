@@ -13,3 +13,6 @@
 [submodule ".vim/pack/tpope/start/fugitive"]
 	path = .vim/pack/tpope/start/fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "src/st"]
+	path = src/st
+	url = https://github.com/Torphedo/st
