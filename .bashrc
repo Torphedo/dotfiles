@@ -2,7 +2,7 @@
 
 # Prepend local bin folder to PATH so we can install software for ourselves
 # without root.
-export PATH=$HOME/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # Set vi/vim-style keybindings for bash instead of emacs ones
 set -o vi

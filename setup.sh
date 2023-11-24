@@ -1,6 +1,9 @@
 #!/bin/bash
+
+local_install=${HOME}
+
 clean_local_make_install() {
-    make install PREFIX=${HOME}/local
+    make install PREFIX=${local_install}
     make clean
 }
 
@@ -18,7 +21,7 @@ if command_missing vim; then
     git clone https://github.com/vim/vim
     cd vim
     make
-    make install prefix=${HOME}/local
+    make install prefix=${local_install}
     cd .. 
 fi
 
@@ -26,7 +29,7 @@ if command_missing tmux; then
     git clone https://github.com/tmux/tmux
     cd tmux
     sh autogen.sh
-    ./configure --prefix=${HOME}/local
+    ./configure --prefix=${local_install}
     make install
     cd .. 
 fi
@@ -34,7 +37,7 @@ fi
 if command_missing nvim; then
     git clone https://github.com/neovim/neovim
     cd neovim
-    make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=${HOME}/local
+    make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=${local_install}
     make install
     cd .. 
 fi
