@@ -23,6 +23,12 @@ set nobackup
 set undodir="~/.vim/undodir"
 set undofile
 
+if has('win32') || has ('win64')
+    let $VIMHOME = $VIM."/vimfiles"
+else
+    let $VIMHOME = $HOME."/.vim"
+endif
+
 " Enable system clipboard support
 set clipboard+=unnamedplus
 
@@ -117,8 +123,15 @@ nnoremap <leader>gp :Git push origin main<CR>
 nnoremap <leader>e :Ex<CR>
 
 " LaTeX shortcuts
-nnoremap <leader>ll :!mkdir -p out<CR>:!pdflatex -output-directory=out %<CR><CR>
-nnoremap <leader>lv :!zathura out/*.pdf --fork<CR><CR>
+" Run ~/.vim/latex.sh, passing the current file as an argument.
+nnoremap <leader>ll :execute ("!".expand("$VIMHOME")."/latex.sh ".expand("%"))<CR><CR>
+
+" Open PDF build of tex file in local PDF viewer.
+nnoremap <leader>lv :!zathura out/%:r.pdf --fork<CR><CR>
+" Strip tex file of commands and word-count it
+nnoremap <leader>lc :!detex % \| wc -w<CR>
+" Open PDF build of tex file in browser
+nnoremap <leader>lb :!firefox out/%:r.pdf<CR><CR>
 
 " Spellcheck keybinds
 nnoremap <leader>sp :setlocal spell spelllang=en_us<CR>
