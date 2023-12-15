@@ -114,7 +114,7 @@ nnoremap <leader>gr :Gremove<CR>
 nnoremap <leader>gp :Git push origin main<CR>
 
 " Leader + e (for "explore") to open netrw.
-nnoremap <leader>e <C-w>n:Ex<CR>
+nnoremap <leader>e :Ex<CR>
 
 " LaTeX shortcuts
 nnoremap <leader>ll :!mkdir -p out<CR>:!pdflatex -output-directory=out %<CR><CR>
