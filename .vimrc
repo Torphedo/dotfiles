@@ -92,6 +92,21 @@ let g:netrw_liststyle=3
 " Make space our leader key
 let mapleader=" "
 
+" Shortcuts for window splits
+nnoremap _ :sp<CR>
+nnoremap <Bar> :vsp<CR>
+
+" Window navigation shortcuts
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <leader><C-H> <C-w>H
+nnoremap <leader><C-J> <C-w>J
+nnoremap <leader><C-K> <C-w>K
+nnoremap <leader><C-L> <C-w>L
+
 " Shift-J / Shift-K in visual line mode to move lines around
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
