@@ -183,6 +183,10 @@ bindsym $mod+Ctrl+e exec pcmanfm
 
 bindsym $mod+i exec ~/toggle_screenkey.sh
 
+# Moving workspaces between screens 
+bindsym $mod+Ctrl+l move workspace to output right
+bindsym $mod+Ctrl+h move workspace to output left
+
 # Disable title bars
 for_window [class="^.*"] border pixel 1
 
