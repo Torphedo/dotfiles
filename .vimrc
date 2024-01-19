@@ -155,3 +155,5 @@ nnoremap <leader>sp :setlocal spell spelllang=en_us<CR>
 nnoremap <leader>p "+p
 nnoremap <leader>y "+y
 
+nnoremap <leader>x :!chmod +x %<CR><CR>:redr!<CR>
+
