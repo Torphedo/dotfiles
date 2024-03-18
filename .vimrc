@@ -132,7 +132,7 @@ nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gc :Gread<CR>
 nnoremap <leader>gr :Gremove<CR>
 " We assume remote name is main here, maybe not the best.
-nnoremap <leader>gp :Git push origin main<CR>
+nnoremap <leader>gp :Git push<CR>
 
 " Leader + e (for "explore") to open netrw.
 nnoremap <leader>e :Ex<CR>
