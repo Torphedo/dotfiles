@@ -182,6 +182,7 @@ bindsym $mod+Ctrl+Up exec brillo -q -A 5
 bindsym $mod+Ctrl+Down exec brillo -q -U 5
 
 bindsym $mod+Ctrl+e exec pcmanfm
+bindsym $mod++Shift+d exec doppler
 
 bindsym $mod+i exec ~/toggle_screenkey.sh
 
@@ -211,4 +212,6 @@ exec prime-run steam -no-browser +open steam://open/minigameslist
 exec firefox
 exec spotify-launcher
 exec discord
+
+exec_always oneko -rv -speed 40
 
