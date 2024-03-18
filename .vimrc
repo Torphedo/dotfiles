@@ -93,7 +93,7 @@ let g:netrw_liststyle=3
 let mapleader=" "
 
 " Shortcuts for window splits
-nnoremap _ :sp<CR>
+" nnoremap _ :sp<CR>
 nnoremap <Bar> :vsp<CR>
 
 " Window navigation shortcuts
