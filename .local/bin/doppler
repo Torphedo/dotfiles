@@ -1,0 +1,9 @@
+#!/bin/sh
+# Replace the URL with the one for your local radar station code
+RADAR_URL="https://radar.weather.gov/ridge/standard/KBUF_loop.gif"
+
+# The "-t" argument tells it how many milliseconds to display the notification
+notify-send -t 1000 "Downloading radar data..."
+
+# We need to manually tell mpv to loop the GIF
+mpv --loop-file=inf $RADAR_URL
