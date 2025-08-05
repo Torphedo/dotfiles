@@ -8,12 +8,18 @@ clean_local_make_install() {
 }
 
 command_missing() {
-if command -v $1 > /dev/null; then
-  return 1
-else
-  return 0
-fi
+    if command -v $1 > /dev/null; then
+        return 1
+    else
+        return 0
+    fi
 }
+
+# Install configs and scripts
+cp -r .vim ${local_install}
+cp .vimrc ${local_install}
+cp .bashrc ${local_install}
+cp toggle_program.sh ${local_install}
 
 cd src
 # Install missing dependencies locally from source
@@ -35,7 +41,7 @@ if command_missing tmux; then
 fi
 
 if command_missing nvim; then
-    git clone https://github.com/neovim/neovim
+    git clone https://github.com/neovim/neovim --recursive
     cd neovim
     make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=${local_install}
     make install

@@ -188,7 +188,9 @@ bindsym $mod+Ctrl+Down exec brillo -q -U 5
 bindsym $mod+Ctrl+e exec pcmanfm
 bindsym $mod++Shift+d exec doppler
 
-bindsym $mod+i exec ~/toggle_screenkey.sh
+bindsym $mod+i exec ~/toggle_program.sh screenkey --mods-mode win -t 1 -s small --opacity 0.2
+bindsym $mod+o exec ~/toggle_program.sh oneko -rv -speed 20
+# bindsym $mod+u exec ~/toggle_program.sh picom
 
 # Start emacs daemon on boot and add emacs keybind
 exec emacs --daemon
