@@ -191,6 +191,9 @@ bindsym $mod++Shift+d exec doppler
 bindsym $mod+i exec ~/toggle_program.sh screenkey --mods-mode win -t 1 -s small --opacity 0.2
 bindsym $mod+o exec ~/toggle_program.sh oneko -rv -speed 20
 # bindsym $mod+u exec ~/toggle_program.sh picom
+bindsym $mod+b exec st bluetuith
+bindsym $mod+u exec st ani-cli "one piece" --select-nth 1
+bindsym $mod+y exec st ani-cli "one piece" --select-nth 1 --syncplay
 
 # Start emacs daemon on boot and add emacs keybind
 exec emacs --daemon
@@ -208,6 +211,7 @@ assign [class="steamwebhelper"] 4
 assign [class="steam"] 4
 assign [class="Blender"] 8
 assign [class="discord"] 9
+assign [class="vesktop"] 9
 assign [class="Spotify"] 10
 
 bindsym $mod+p exec i3lock -c 000000
