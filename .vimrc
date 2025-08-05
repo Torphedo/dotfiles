@@ -32,7 +32,7 @@ endif
 " Enable system clipboard support
 set clipboard+=unnamedplus
 
-" Color bar at column 80 to remind us to keep code width short
+" Color bar to remind us to keep code width short
 set cc=80
 
 " Enable solarized dark color scheme in degraded 256 color mode
@@ -46,6 +46,7 @@ filetype plugin on
 
 set laststatus=2 " Always show statusline
 
+" Tables for the user-facing mode text and colors in GUI and terminal modes
 let g:currentmode={
    \ 'n'  : 'NORMAL',
    \ 'v'  : 'VISUAL',
@@ -56,6 +57,36 @@ let g:currentmode={
    \ 'Rv' : 'V-Replace',
    \ 'c'  : 'COMMAND',
 \}
+
+let g:bgcode = {
+   \ 'n'      : 121,
+   \ 'c'      : 121,
+   \ 'v'      : 165,
+   \ 'V'      : 165,
+   \ "\<C-V>" : 165,
+   \ 'i'      : 51,
+   \ 'R'      : 124,
+   \ 'Rv'     : 124,
+\}
+
+let g:bg_gui_color = {
+   \ 'n'      : "87ffaf",
+   \ 'c'      : "87ffaf",
+   \ 'v'      : "d700ff",
+   \ 'V'      : "d700ff",
+   \ "\<C-V>" : "d700ff",
+   \ 'i'      : "00ffff",
+   \ 'R'      : "aa0000",
+   \ 'Rv'     : "aa0000",
+\}
+
+function! SetStatusColor()
+    execute "hi StatusLineTermNC ctermbg=".g:bgcode[mode()]." ctermfg=0 guibg=#".g:bg_gui_color[mode()]." guifg=#000000"
+endfunction
+
+" Initial color, and set status line color in the future
+call SetStatusColor()
+autocmd ModeChanged * call SetStatusColor()
 
 " Custom statusline.
 set statusline=%#StatusLineTermNC#\ %{g:currentmode[mode()]}\ 
