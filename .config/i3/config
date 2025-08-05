@@ -12,6 +12,9 @@
 set $mod Mod4
 
 exec --no-startup-id picom
+exec syncthing --no-browser
+
+exec export TERMINAL="st"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -178,6 +181,7 @@ bar {
 # Reload our wallpaper every time
 exec_always nitrogen --restore
 
+# Screen brightness hotkeys
 bindsym $mod+Ctrl+Up exec brillo -q -A 5
 bindsym $mod+Ctrl+Down exec brillo -q -U 5
 
@@ -185,6 +189,10 @@ bindsym $mod+Ctrl+e exec pcmanfm
 bindsym $mod++Shift+d exec doppler
 
 bindsym $mod+i exec ~/toggle_screenkey.sh
+
+# Start emacs daemon on boot and add emacs keybind
+exec emacs --daemon
+bindsym $mod+n exec emacsclient -c -a "emacs"
 
 # Moving workspaces between screens 
 bindsym $mod+Ctrl+l move workspace to output right
@@ -212,6 +220,3 @@ exec prime-run steam -no-browser +open steam://open/minigameslist
 exec firefox
 exec spotify-launcher
 exec discord
-
-exec_always oneko -rv -speed 40
-
