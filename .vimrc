@@ -186,9 +186,11 @@ nnoremap <leader>lb :!firefox out/%:r.pdf<CR><CR>
 " Spellcheck keybinds
 nnoremap <leader>sp :setlocal spell spelllang=en_us<CR>
 
-" Shortcut to use clipboard
+" Shortcut to use system clipboard
 nnoremap <leader>p "+p
 nnoremap <leader>y "+y
+vnoremap <leader>p "+p
+vnoremap <leader>y "+y
 
 nnoremap <leader>x :!chmod +x %<CR><CR>:redr!<CR>
 
