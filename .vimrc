@@ -79,7 +79,7 @@ let &t_SR = "\e[3 q"
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
 
-" Remove a weird delay after leaving insert mode before restoring block cursor
+" Fix a weird delay after leaving insert mode before restoring block cursor
 set ttimeout
 set ttimeoutlen=1
 
@@ -92,9 +92,14 @@ let g:netrw_liststyle=3
 " Make space our leader key
 let mapleader=" "
 
+" Emacs style save
+nnoremap <leader>fs :w<CR>
+
 " Shortcuts for window splits
-" nnoremap _ :sp<CR>
 nnoremap <Bar> :vsp<CR>
+" Disable Control-Z because I keep killing Vim by accident
+nnoremap <C-z> <C-x>
+nnoremap Q :w<CR>
 
 " Window navigation shortcuts
 nnoremap <C-h> <C-w>h
@@ -134,7 +139,6 @@ nnoremap <leader>gr :Gremove<CR>
 " We assume remote name is main here, maybe not the best.
 nnoremap <leader>gp :Git push<CR>
 
-" Leader + e (for "explore") to open netrw.
 nnoremap <leader>e :Ex<CR>
 
 " LaTeX shortcuts
