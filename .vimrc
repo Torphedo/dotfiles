@@ -56,11 +56,17 @@ let g:currentmode={
    \ 'R'  : 'REPLACE',
    \ 'Rv' : 'V-Replace',
    \ 'c'  : 'COMMAND',
+   \ 's'  : 'SELECT',
+   \ 'S'  : 'S-Line',
+   \ "\<C-S>" : 'S-Block',
 \}
 
 let g:bgcode = {
    \ 'n'      : 121,
    \ 'c'      : 121,
+   \ 's'      : 121,
+   \ 'S'      : 121,
+   \ "\<C-S>" : 121,
    \ 'v'      : 165,
    \ 'V'      : 165,
    \ "\<C-V>" : 165,
@@ -72,6 +78,9 @@ let g:bgcode = {
 let g:bg_gui_color = {
    \ 'n'      : "87ffaf",
    \ 'c'      : "87ffaf",
+   \ 's'      : "87ffaf",
+   \ 'S'      : "87ffaf",
+   \ "\<C-S>" : "87ffaf",
    \ 'v'      : "d700ff",
    \ 'V'      : "d700ff",
    \ "\<C-V>" : "d700ff",
@@ -122,15 +131,23 @@ let g:netrw_liststyle=3
 
 " Make space our leader key
 let mapleader=" "
+nnoremap <leader><leader> :source<CR>
 
 " Emacs style save
 nnoremap <leader>fs :w<CR>
+nnoremap <leader>. :sp<CR>:Ex<CR>
 
 " Shortcuts for window splits
 nnoremap <Bar> :vsp<CR>
 " Disable Control-Z because I keep killing Vim by accident
 nnoremap <C-z> <C-x>
 nnoremap Q :w<CR>
+
+" Buffer swapping
+nnoremap <C-s> :e #<CR>
+nnoremap <leader>j :bprev<CR>
+nnoremap <leader>k :bnext<CR>
+nnoremap <leader>b :buffers<CR>
 
 " Window navigation shortcuts
 nnoremap <C-h> <C-w>h
